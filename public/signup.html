@@ -1,0 +1,53 @@
+<html >
+    <head>
+        <title>First app</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+          var socket = io();
+        </script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    </head>
+    <body style="background-image: url(./images/bg.jpg);   background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  "> 
+        <script>
+
+          async  function sendd(){
+                var a = document.getElementById("user").value;
+                var b = document.getElementById("pass").value;
+                var c = document.getElementById("apass").value;
+                if(b!=c) window.location = './signup.html';
+               else{ var res;
+                socket.emit("signup",a,b);
+                 await socket.on("asignup",(data)=>{
+                    res = data;
+                    if(res==1) window.location = '/';
+                    else window.location = './signup.html'
+                }
+            
+                )
+                return res;
+            }
+            }
+        
+            </script>
+        <div style="width: 300px; height: 400px; background-color:white;   margin: auto;
+         border-radius: 20px; margin-top: 15%
+        ">
+            <div style="padding-top: 20%;" >
+            <h1 style="text-align: center;">Login</h1>
+            <input id="user" class="form-control" style=" border-radius: 20px; width: 70%; margin-left: 15%; margin-top: 20%;" placeholder="Username" type="text">
+            <input id="pass" class="form-control" style="margin-top: 5%; border-radius: 20px; width: 70%; margin-left: 15%;" placeholder="Password" type="password">
+            <input id="apass" class="form-control" style="margin-top: 5%; border-radius: 20px; width: 70%; margin-left: 15%;" placeholder="Password again"  type="password">
+            <button type="button" style="margin-left: 35%; margin-top: 5%;" id="btn" class="btn btn-primary">Primary</button>
+            <script>  document.getElementById("btn").onclick = function(){
+                (async () => {
+                  await sendd();
+                })()
+                        }</script>
+        </div>
+        </div>
+    </body>
+</html>
