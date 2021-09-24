@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <title>Anime Gallery</title>
+        <link href="./style/nstyle.css" rel="stylesheet" >
+
+        <script src="./js/cp.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                <h3 class="gallery-title">Your name</h3>
+                <div class="row">
+                    <a  data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-3 col-md-4 col-6 my-3">
+                        <img src="https://nld.mediacdn.vn/2017/your-name-1484296118422.jpg" class="img-fluid card myImg">
+                    </a>
+                    <a  data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-3 col-md-4 col-6 my-3">
+                        <img src="https://cdn.tgdd.vn//GameApp/1342036//yournameposter-800x1130.jpg" class="img-fluid card myImg">
+                    </a>
+                    <a  data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-3 col-md-4 col-6 my-3">
+                        <img src="https://1.bp.blogspot.com/-2WOLL1fxVac/X8YJxeUcmDI/AAAAAAAA04U/vV0ywBRn5-4txYZf0tEgd3MSm0pcdbUSACLcBGAsYHQ/s0/Hinh-Nen-Your-Name%2B%25288%2529.jpg" class="img-fluid card myImg">
+                    </a>
+                    <a  data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-3 col-md-4 col-6 my-3">
+                        <img src="https://s199.imacdn.com/ta/2017/06/30/30c468c24a247dbf_e6aa7b59e080b494_18402314988019961143215.jpg" class="img-fluid card myImg">
+                    </a>
+                    <a  data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-3 col-md-4 col-6 my-3">
+                        <img src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/uploads/images/2015/Tin-Tuc/An/12-2016/iphone/iphone-7/anh-nen-may-tinh-cuc-dep-cua-bo-phim-your-name-cau-ten-la-gi-dang-hot-fptshop-8.jpg" class="img-fluid card myImg">
+                    </a>
+                    <a  data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-3 col-md-4 col-6 my-3">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXOVFPa0jOAnWFGkOh_VNYig0_m327420O8tyCCn3dqtJgGx0kWJd_6qM2YHqvRjcCq-U&usqp=CAU" class="img-fluid card myImg">
+                    </a>
+<!-- Trigger the Modal -->
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
+<script>
+    var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = $('.myImg');
+var modalImg = $("#img01");
+var captionText = document.getElementById("caption");
+$('.myImg').click(function(){
+    modal.style.display = "block";
+    var newSrc = this.src;
+    modalImg.attr('src', newSrc);
+    captionText.innerHTML = this.alt;
+});
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+</script>
+    </body>
+</html>

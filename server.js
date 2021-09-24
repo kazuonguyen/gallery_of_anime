@@ -45,6 +45,17 @@ MongoClient.connect(url, function(err, db) {
     first:a,
     last:b
   } };
+  var ff;
+  dbo.collection("people").findOne({"name.first":myobj.name.first}, function(err, result) {
+    if(result){
+      ff=1;
+      console.log("exist")
+ }
+     else{ff=0;}
+     
+  });
+  if(ff==1){socket.emit("asignup",0)}
+  else{
   dbo.collection("people").insertOne(myobj, function(err, res) {
     if (err){ 
       socket.emit("asignup",0);
@@ -55,6 +66,7 @@ MongoClient.connect(url, function(err, db) {
     console.log("1 document inserted");
     db.close();
   });
+}
 });
 
      })

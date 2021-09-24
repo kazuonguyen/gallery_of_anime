@@ -8,11 +8,14 @@
   },
   "author": "",
   "license": "ISC",
+
   "dependencies": {
+    "custom-electron-titlebar": "^3.2.7",
     "ejs": "^3.1.6",
     "electron": "^14.0.0",
     "express": "^4.17.1",
     "mongoose": "^6.0.5",
+    "preloadjs": "^1.0.1",
     "socket.io": "^4.2.0"
   }
 }

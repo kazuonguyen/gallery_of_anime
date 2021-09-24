@@ -6,6 +6,58 @@
         <script>
           var socket = io();
         </script>
+         <style>
+            .button {
+    position: relative;
+    padding: 8px 16px;
+    background: #009579;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  
+  .button:active {
+    background: #007a63;
+  }
+  
+  .button__text {
+    color: #ffffff;
+    transition: all 0.2s;
+  }
+  
+  .button--loading .button__text {
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .button--loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+  }
+  
+  @keyframes button-loading-spinner {
+    from {
+      transform: rotate(0turn);
+    }
+  
+    to {
+      transform: rotate(1turn);
+    }
+  }
+  
+          </style>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     </head>
     <body style="background-image: url(./images/bg.jpg);   background-position: center;
@@ -41,8 +93,11 @@
             <input id="user" class="form-control" style=" border-radius: 20px; width: 70%; margin-left: 15%; margin-top: 20%;" placeholder="Username" type="text">
             <input id="pass" class="form-control" style="margin-top: 5%; border-radius: 20px; width: 70%; margin-left: 15%;" placeholder="Password" type="password">
             <input id="apass" class="form-control" style="margin-top: 5%; border-radius: 20px; width: 70%; margin-left: 15%;" placeholder="Password again"  type="password">
-            <button type="button" style="margin-left: 35%; margin-top: 5%;" id="btn" class="btn btn-primary">Primary</button>
-            <script>  document.getElementById("btn").onclick = function(){
+            <div id="btn">
+                <button type="button" style="margin-left: 35%; margin-top: 5%;" class="button btn btn-primary"  onclick="this.classList.toggle('button--loading')">
+                  <span class="button__text">Sign up</span>
+              </button>
+            </div>            <script>  document.getElementById("btn").onclick = function(){
                 (async () => {
                   await sendd();
                 })()

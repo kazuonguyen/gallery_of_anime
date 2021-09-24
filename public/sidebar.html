@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Collapsible sidebar using Bootstrap 4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Anime Gallery</title>
+    <link href="./style/nstyle.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="./js/cp.js"></script>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="./style/sb.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script >function downloadImage(url, name){
+        fetch(url)
+          .then(resp => resp.blob())
+          .then(blob => {
+              const url = window.URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.style.display = 'none';
+              a.href = url;
+              // the filename you want
+              a.download = name;
+              document.body.appendChild(a);
+              a.click();
+              window.URL.revokeObjectURL(url);
+          })
+          .catch(() => alert('An error sorry'));
+  }
+    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <link rel="import" href="/public/index.html">
+
+    <div class="wrapper" >
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Anime Gallery</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                
+                <li>
+                    <a href="#">About</a>
+                </li>
+                
+                <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Category</span>
+                    </button>
+            
+
+                    
+                </div>
+            </nav>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                    <h3 class="gallery-title">Your name</h3>
+                    <div class="row">
+                        <a  data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-3 col-md-4 col-6 my-3">
+                            <img src="https://nld.mediacdn.vn/2017/your-name-1484296118422.jpg" class="img-fluid card myImg">
+                        </a>
+                        <a  data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-3 col-md-4 col-6 my-3">
+                            <img src="https://i.imgur.com/fb2bynG.jpg" class="img-fluid card myImg">
+                        </a>
+                        <a  data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-3 col-md-4 col-6 my-3">
+                            <img src="https://cdn.tgdd.vn//GameApp/1343776//54-800x450.jpg" class="img-fluid card myImg">
+                        </a>
+                        <a  data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-3 col-md-4 col-6 my-3">
+                            <img src="https://i.imgur.com/sRoodqv.jpg" class="img-fluid card myImg">
+                        </a>
+                        <a  data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-3 col-md-4 col-6 my-3">
+                            <img src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/uploads/images/2015/Tin-Tuc/An/12-2016/iphone/iphone-7/anh-nen-may-tinh-cuc-dep-cua-bo-phim-your-name-cau-ten-la-gi-dang-hot-fptshop-8.jpg" class="img-fluid card myImg">
+                        </a>
+                        <a  data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-3 col-md-4 col-6 my-3">
+                                <img src="https://i.imgur.com/XAKB2KE.jpg" class="img-fluid card myImg">
+                            </a>
+    <!-- Trigger the Modal -->
+    
+                    </div>
+                </div>
+            </div>
+            </div>
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal" style="    overflow-y: auto;    ">
+    
+      <!-- The Close Button -->
+      <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+      <!-- Modal Content (The Image) -->
+      <img class="modal-content" id="img01">
+      <div class="col text-center">
+
+      <button id="download" class="btn" style="            margin-top: 10px;
+      "><i class="fa fa-download"></i> Download</button>
+      </div>
+
+      <!-- Modal Caption (Image Text) -->
+      <div id="caption"></div>
+
+    </div>
+    <script>
+        //download image
+    var svSrc;
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = $('.myImg');
+    var modalImg = $("#img01");
+    var captionText = document.getElementById("caption");
+    $('.myImg').click(function(){
+        modal.style.display = "block";
+        var newSrc = this.src;
+        svSrc = newSrc;
+        console.log(svSrc)
+        modalImg.attr('src', newSrc);
+        captionText.innerHTML = this.alt;
+    });
+     
+        var modal = document.getElementById('myModal');
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on <span> (x), close the modal
+        $('#download').click(function(){
+            downloadImage(svSrc,"image");
+        })
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    </script>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
