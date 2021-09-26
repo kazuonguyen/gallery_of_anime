@@ -1,6 +1,8 @@
 <html >
     <head>
-        <title>First app</title>
+      <link rel="stylesheet" href="style/anti.css">
+
+        <title>Anime Gallery</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         <script src="/socket.io/socket.io.js"></script>
         <script>
@@ -102,6 +104,39 @@
                   await sendd();
                 })()
                         }</script>
+              <script>
+                    var input1 = document.getElementById("pass");
+              var input2 = document.getElementById("user");
+              var input3 = document.getElementsById("apass");
+// Execute a function when the user releases a key on the keyboard
+input1.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click();
+  }
+});
+input2.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click();
+  }
+});
+input3.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click();
+  }
+});
+              </script>
         </div>
         </div>
     </body>
