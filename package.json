@@ -1,20 +1,29 @@
 {
-  "name": "socketio",
+  "name": "anime-gallery",
   "version": "1.0.0",
-  "description": "",
+  "description": "A place to see anime pictures\r ![Anime gallery](https://i.imgur.com/0PcNN7a.png)\r # Using\r Firstly, you need to install nodejs packages:\r ```\r npm install\r ```\r To run this app:\r ```\r npm start\r ```",
   "main": "index.js",
   "scripts": {
     "start": " electron ."
   },
-  "author": "",
+  "author": "hungtvt",
   "license": "ISC",
   "dependencies": {
     "custom-electron-titlebar": "^3.2.7",
     "ejs": "^3.1.6",
-    "electron": "^14.0.0",
+    "electron": "^14.0.1",
     "express": "^4.17.1",
-    "mongoose": "^6.0.5",
+    "mongoose": "^6.0.7",
     "preloadjs": "^1.0.1",
     "socket.io": "^4.2.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenquochung2357/gallery_of_anime.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nguyenquochung2357/gallery_of_anime/issues"
+  },
+  "homepage": "https://github.com/nguyenquochung2357/gallery_of_anime#readme"
 }
